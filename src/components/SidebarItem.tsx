@@ -2,20 +2,24 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react'
-import { CiBookmarkCheck } from 'react-icons/ci';
+import { IoCalendarOutline, IoCheckboxOutline, IoListOutline } from 'react-icons/io5';
 
 const menuItems = [
     {
         path: '/dashboard',
-        icon: <CiBookmarkCheck size={40}/>,
+        icon: <IoCalendarOutline size={20}/>,
         title:'Inicio',
     },
     {
         path: '/dashboard/rest-todos',
-        icon: <CiBookmarkCheck size={40}/>,
-        title:'rest todos',
+        icon: <IoCheckboxOutline size={20}/>,
+        title:'Rest Todos',
     },
-    
+    {
+        path: '/dashboard/#server-todos',
+        icon: <IoListOutline size={20}/>,
+        title:'Server Actions',
+    },
 
     
 ]
