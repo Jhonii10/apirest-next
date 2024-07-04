@@ -5,6 +5,7 @@ import { IoTrashOutline } from "react-icons/io5";
 import * as todosApi from '@/todos/helpers/todos'
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { addTodo, deleteCompletedAction,  } from "../actions/actions";
 
 
 export const NewTodo = () => {
@@ -14,14 +15,14 @@ export const NewTodo = () => {
 
     const handleSubmit = async(e:FormEvent)=>{
         e.preventDefault();
-        if(form.trim().length === 0) return;
-        await todosApi.createTodo(form);
+        if(form.trim().length === 0) return toast.error('Formulario vacio');
+        await addTodo(form);
         router.refresh();
         setForm('')
     }
 
     const deleteCompleted = async()=>{
-        const {count} = await todosApi.deleteTodos();
+        const {count} = await deleteCompletedAction()
         if (count === 0) {
             return toast.error('No hay tareas completas para eliminar')
         }else{
