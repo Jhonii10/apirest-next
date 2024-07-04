@@ -4,6 +4,12 @@ export const revalidate = 0;
 import prisma from "@/lib/prisma"
 import { NewTodo, TodosGrid } from "@/todos"
 
+
+export const metadata = {
+ title: 'Server todos',
+ description: 'Server todos',
+};
+
 export default async function ServerTodosPage() {
     const todos = await prisma.todo.findMany({orderBy:{description:'asc'}})
     
