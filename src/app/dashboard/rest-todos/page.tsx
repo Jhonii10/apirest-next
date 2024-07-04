@@ -4,7 +4,7 @@ import { TodosGrid } from "@/todos/components/TodosGrid";
 
 export default async function RestTodosPage() {
 
-    const todos = await prisma.todo.findMany({orderBy:{description:'asc'}})
+  const todos = await prisma.todo.findMany({orderBy:{description:'asc'}})
     
   return (
     <div>
