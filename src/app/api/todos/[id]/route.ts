@@ -28,3 +28,4 @@ export async function PUT(request: Request , segments: any) {
 
   return NextResponse.json(updatedTodo)
 }
+
