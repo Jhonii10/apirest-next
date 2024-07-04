@@ -20,6 +20,15 @@ export const TodosGrid = ({todos = []}:Props) => {
         router.refresh();
     }
 
+  
+    if (todos.length === 0) {
+        return (
+            <div className='flex items-center justify-center h-[70vh] w-full gap-4'>
+                <h1 className='text-2xl font-bold'>No se encontraron tareas</h1>
+            </div>
+        )
+    }
+
   return (
     <div className='grid grid-cols-1 sm:grid-cols-3 gap-2'>
         {
