@@ -13,6 +13,7 @@ export const TabBar = ({tabOptions=[1,2,3,4], currentTab = 1}:Props) => {
 
     const [selected, setSelected] = useState(currentTab);
     const router = useRouter()
+    const numbercols = tabOptions.length
     
 
     const onTabSelected = (tab:number)=>{
@@ -23,7 +24,7 @@ export const TabBar = ({tabOptions=[1,2,3,4], currentTab = 1}:Props) => {
     }
 
     return (
-      <div className={`grid w-full space-x-2 rounded-xl bg-gray-200 ${'grid-cols-'+tabOptions.length} p-2 `}>
+      <div className={`grid w-full space-x-2 rounded-xl bg-gray-200 grid-cols-${numbercols} p-2 `}>
         {
             tabOptions.map(tab => (
                 <div key={tab}>
