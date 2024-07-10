@@ -2,6 +2,7 @@ import { WidgetItem } from "@/components";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 
 export const metadata = {
@@ -10,7 +11,8 @@ export const metadata = {
 };
 export default async function DashboardPage() {
 
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
+  
   if (!session) {
     redirect('/api/auth/signin')
   }
@@ -20,7 +22,7 @@ export default async function DashboardPage() {
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <WidgetItem title="Usuario conectado ">
             <div className="flex flex-col justify-center items-center gap-2">
-              <h2 >{name}</h2>
+            <h2 >{name}</h2>
             <Image
             src={image}
             alt="tailus logo"
