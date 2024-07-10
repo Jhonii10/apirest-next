@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {Quicksand } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "@/auth";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -16,7 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <AuthProvider>
+      <html lang="en">
       <body className={quicksand.className}>
       <Toaster
         position="bottom-right"
@@ -25,5 +27,7 @@ export default function RootLayout({
         {children}
         </body>
     </html>
+    </AuthProvider>
+
   );
 }
