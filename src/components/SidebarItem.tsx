@@ -44,7 +44,7 @@ export const SidebarItem = () => {
     const path = usePathname();
     
   return (
-    <ul className="space-y-2 tracking-wide mt-8">
+    <ul className="space-y-2 tracking-wide mt-8 ">
         {
             menuItems.map((item)=>{
                 return(
