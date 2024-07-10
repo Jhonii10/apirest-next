@@ -5,10 +5,11 @@ import { SidebarItem } from './SidebarItem';
 import Link from 'next/link';
 import { getServerSession } from 'next-auth';
 import { LogoutButton } from './LogoutButton';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 export const Sidebar = async () => {
 
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   const name = session?.user?.name ?? 'sin nombre';
   const image = session?.user?.image ?? '';
 
