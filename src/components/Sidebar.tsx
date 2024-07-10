@@ -4,6 +4,7 @@ import {CiLogout } from 'react-icons/ci';
 import { SidebarItem } from './SidebarItem';
 import Link from 'next/link';
 import { getServerSession } from 'next-auth';
+import { LogoutButton } from './LogoutButton';
 
 export const Sidebar = async () => {
 
@@ -14,7 +15,7 @@ export const Sidebar = async () => {
 
 
   return (
-    <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
+    <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] overflow-y-auto">
     <div>
       <div className="-mx-6 px-6 py-4">
         <Link href="/dashboard" title="dashboard">
@@ -44,10 +45,7 @@ export const Sidebar = async () => {
     </div>
 
     <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-      <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group hover:bg-red-600 hover:text-white">
-        <CiLogout size={24} />
-        <span >Logout</span>
-      </button>
+      <LogoutButton/>
     </div>
   </aside>
   )
