@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react'
-import { IoBasketOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline } from 'react-icons/io5';
+import { IoBasketOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline, IoPersonOutline } from 'react-icons/io5';
 
 const menuItems = [
     {
@@ -29,6 +29,11 @@ const menuItems = [
         path: '/dashboard/products',
         icon: <IoBasketOutline size={20}/>,
         title:'Products',
+    },
+    {
+        path: '/dashboard/profile',
+        icon: <IoPersonOutline size={20}/>,
+        title:'Profile',
     },
 
     
