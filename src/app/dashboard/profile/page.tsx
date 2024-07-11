@@ -13,6 +13,8 @@ export default function ProfilePage() {
             <span>{session?.user?.name ?? 'Not name'}</span>
             <span>{session?.user?.image ?? 'Not image'}</span>
             <span>{session?.user?.email ?? 'Not email'}</span>
+            <span>{session?.user?.id ?? 'Not uuid'}</span>
+            <span>{session?.user?.roles ?? 'Not rol'}</span>
         </div>
     </div>
   );

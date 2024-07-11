@@ -11,7 +11,8 @@ export const Sidebar = async () => {
 
   const session = await getServerSession(authOptions);
   const name = session?.user?.name ?? 'sin nombre';
-  const image = session?.user?.image ?? '';
+  const image = session?.user?.image ?? 'https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp';
+  const rol = session?.user?.roles ?? 'user'
 
 
 
@@ -39,7 +40,7 @@ export const Sidebar = async () => {
             height={320}
         />
           <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{name}</h5>
-          <span className="hidden text-gray-400 lg:block">Admin</span>
+          <span className="hidden text-gray-400 lg:block">{rol}</span>
       </div>
 
       <SidebarItem/>
