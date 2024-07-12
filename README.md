@@ -12,6 +12,10 @@ docker-compose up -d
 5. Remplaza las varibles de entorno
 6. Ejecutar el seed para [crear datos en la base de datos](localhost:3000/api/seed) 
 
+## Nota: usuario por defecto
+usuario:  test1@gmail.com
+password: 123456
+
 ## Prisma commnads
 ```
 npx prisma init
