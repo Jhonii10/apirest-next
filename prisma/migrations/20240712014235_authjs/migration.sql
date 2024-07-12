@@ -41,9 +41,12 @@ CREATE TABLE "sessions" (
 CREATE TABLE "users" (
     "id" TEXT NOT NULL,
     "name" TEXT,
+    "password" TEXT,
     "email" TEXT,
     "email_verified" TIMESTAMP(3),
     "image" TEXT,
+    "isActive" BOOLEAN NOT NULL DEFAULT true,
+    "roles" TEXT[] DEFAULT ARRAY['user']::TEXT[],
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
